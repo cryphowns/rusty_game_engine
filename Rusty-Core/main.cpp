@@ -2,6 +2,7 @@
 #include "src/graphics/window.h"
 #include "src/maths/maths.h"
 #include "src/maths/matrix.h"
+#include "src/utils/file_handler.h"
 
 using namespace rusty::maths;
 
@@ -13,7 +14,7 @@ int main()
 	glGenVertexArrays(1, &vao);
 	glBindVertexArray(vao);
 
-	Matrix myMatrix = Matrix::translation(Vector3(3.0f, 4.0f, 1.0f));
+	/*Matrix myMatrix = Matrix::translation(Vector3(3.0f, 4.0f, 1.0f));
 
 	for (int i = 0; i < 16; i++)
 	{
@@ -22,7 +23,10 @@ int main()
 			std::cout << std::endl;
 		}
 		std::cout << myMatrix.elements[i] << " ";
-	}
+	}*/
+
+	std::string file = rusty::read_file("main.cpp");
+	std::cout << file << std::endl;
 
 	while (!window.windowClosed())
 	{
